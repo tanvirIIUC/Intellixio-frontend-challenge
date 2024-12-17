@@ -1,7 +1,11 @@
+"use client";
+import { useUserAgentContext } from "@/components/providers/userAgentProvider";
 import { UserAgent } from "@/views/userAgent";
 
 const UserAgentRoot = () => {
-  return <UserAgent />;
+  const { userAgent } = useUserAgentContext();
+  
+  return <UserAgent userAgent={userAgent ?? ""} />;
 };
 
 export default UserAgentRoot;
